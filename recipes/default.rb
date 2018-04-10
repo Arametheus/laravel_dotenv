@@ -18,8 +18,8 @@ search("aws_opsworks_app").each do |app|
   template "/srv/www/#{app[:shortname]}/current/.env" do
     source 'env.erb'
     mode '0660'
-    user 'deploy'
-    group 'apache'
+    user 'root'
+    group 'root'
     variables(
       :env => app[:environment]
     )
